@@ -1,1 +1,3 @@
-Make gameboard scale correctly if number of moves change.
+To run, type:
+
+bin/mastermind
