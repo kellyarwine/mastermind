@@ -1,21 +1,20 @@
 require 'mastermind/console_io'
 require 'mastermind/validations'
-require 'mastermind/game_rules'
 require 'mastermind/prompter'
 require 'mastermind/game'
 
 module Mastermind
   class GameRunner
+    attr_reader :console_io, :validations, :prompter
 
     def initialize
       @console_io  = ConsoleIo.new
       @validations = Validations.new
-      @game_rules  = GameRules.new
-      @prompter = Prompter.new(@console_io, @validations, @game_rules)
+      @prompter = Prompter.new(@console_io, @validations)
     end
 
     def play_game
-      Game.new(@prompter, @console_io, @game_rules).call
+      Game.new(@prompter, @console_io).call
       play_game if @prompter.play_again?
     end
 

@@ -1,13 +1,13 @@
 module Mastermind
   class Board
-    attr_accessor :move_history
+    attr_accessor :turn_history
 
     def initialize
-      @move_history = []
+      @turn_history = []
     end
 
-    def store_move(move)
-      @move_history << [move]
+    def store_turn(move, feedback)
+      @turn_history << [move, feedback]
     end
   end
 end

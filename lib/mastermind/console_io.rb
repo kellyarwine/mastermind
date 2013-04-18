@@ -18,13 +18,14 @@ module Mastermind
     end
 
     def get_move
-      # require 'pry'
-      # binding.pry
       get.split("")
     end
 
     def display_invalid_input_message
-      display("Your input was invalid.  Please try again.")
+      display("
+Your input was invalid.  Please try again.
+
+")
     end
 
     def display_welcome_message
@@ -37,7 +38,9 @@ Welcome to Mastermind!
       display("You have #{moves_remaining} moves remaining.
 Please enter your guess from the following options:
 #{available_symbols.join(", ")}
-(Example: rgyb)")
+(Example: rgyb)
+
+")
     end
 
     def display_win_message

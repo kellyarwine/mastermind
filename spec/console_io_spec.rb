@@ -37,6 +37,11 @@ describe Mastermind::ConsoleIo do
     subject.display_welcome_message
   end
 
+  it 'displays a move prompt message' do
+    subject.should_receive(:display)
+    subject.display_move_prompt(1,['b'])
+  end
+
   it 'displays a winning message' do
     subject.should_receive(:display)
     subject.display_win_message

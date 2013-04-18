@@ -14,18 +14,7 @@ module Mastermind
     end
 
     def invalid_guess_symbol?(guess_array, available_symbols)
-      first_letters = first_letter_of_available_symbols(available_symbols)
-      guess_array - first_letters != []
-    end
-
-    def first_letter_of_available_symbols(available_symbols)
-      first_letters = []
-
-      available_symbols.each do |sym|
-        first_letters << sym[0].downcase
-      end
-
-      first_letters
+      guess_array - available_symbols != []
     end
 
   end

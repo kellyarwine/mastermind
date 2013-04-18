@@ -12,21 +12,21 @@ describe Mastermind::Validations do
     end
   end
 
-  context '#invalid_guess?' do
+  context '#invalid_move?' do
     it 'returns true when the guess has more symbols than the secret code' do
-      subject.invalid_guess?(['Dog','Cat','Bird','Bird','Dog'],['Dog','Cat','Bird'],4)
+      subject.invalid_move?(['Dog','Cat','Bird','Bird','Dog'],['Dog','Cat','Bird'],4)
     end
 
-    it 'returns true when the guess has less symbols than the secret code' do
-      subject.invalid_guess?(['Dog','Cat','Dog'],['Dog','Cat','Bird'],4)
+    it 'returns true when the move has less symbols than the secret code' do
+      subject.invalid_move?(['Dog','Cat','Dog'],['Dog','Cat','Bird'],4)
     end
 
-    it 'returns true when the guess has symbols that are not valid' do
-      subject.invalid_guess?(['Dog','Cat','Horse','Bird'],['Dog','Cat','Bird'],4)
+    it 'returns true when the move has symbols that are not valid' do
+      subject.invalid_move?(['Dog','Cat','Horse','Bird'],['Dog','Cat','Bird'],4)
     end
 
-    it 'returns false when the guess has the same number of symbols as the secret code and all of the symbols are valid' do
-      subject.invalid_guess?(['Dog','Cat','Dog','Bird'],['Dog','Cat','Bird'],4)
+    it 'returns false when the move has the same number of symbols as the secret code and all of the symbols are valid' do
+      subject.invalid_move?(['Dog','Cat','Dog','Bird'],['Dog','Cat','Bird'],4)
     end
   end
 
