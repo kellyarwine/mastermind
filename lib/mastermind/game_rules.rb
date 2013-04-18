@@ -10,6 +10,8 @@ module Mastermind
     end
 
     def game_win?(feedback)
+      # require 'pry'
+      # binding.pry
       feedback != nil && feedback.uniq == ['b']
     end
 

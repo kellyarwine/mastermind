@@ -22,6 +22,10 @@ describe Mastermind::GameRules do
     it 'returns false when the feedback is not all exact matches and there are moves remaining' do
       subject.game_over?([' ', 'b', 'b', 'b', 'w'], 1).should be_false
     end
+
+    it 'returns false when there is no feedback and there are moves remaining' do
+      subject.game_over?(nil, 1).should be_false
+    end
   end
 
 end

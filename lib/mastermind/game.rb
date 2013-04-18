@@ -5,7 +5,8 @@ require 'mastermind/secret_code'
 
 module Mastermind
   class Game
-    attr_reader :prompter, :console_io, :game_rules, :board, :feedback, :secret_code, :code, :feedback, :moves_remaining
+    attr_reader :prompter, :console_io, :game_rules, :board, :feedback, :secret_code, :code, :feedback
+    attr_accessor :moves_remaining
 
     def initialize(prompter, console_io)
       @prompter = prompter
@@ -80,7 +81,7 @@ module Mastermind
     end
 
     def game_win?
-      @game_rules.game_win?(@move, @code)
+      @game_rules.game_win?(@move_feedback)
     end
 
     def display_win_message
